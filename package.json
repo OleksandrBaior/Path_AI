@@ -1,16 +1,16 @@
 {
+  "name": "Path_AI",
+  "version": "1.0.0",
+  "main": "cypress.config.js",
+
+  "author": "Oleksandr Baior",
+  "license": "MIT",
+  "description": "",
   "scripts": {
     "cy:open": "cypress open"
   },
   "devDependencies": {
     "cypress": "^14.2.1",
     "typescript": "^5.8.3"
-  },
-  "name": "empath_ai",
-  "version": "1.0.0",
-  "main": "cypress.config.js",
-
-  "author": "Oleksandr Baior",
-  "license": "MIT",
-  "description": ""
+  }
 }
