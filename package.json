@@ -1,16 +1,23 @@
 {
-  "name": "Path_AI",
+  "name": "path_ai",
   "version": "1.0.0",
   "main": "cypress.config.js",
-
   "author": "Oleksandr Baior",
   "license": "MIT",
   "description": "",
   "scripts": {
-    "cy:open": "cypress open"
+    "cy:open": "cypress open",
+    "format:allFilesPrettier": "npx prettier . --write",
+    "prepare": "husky"
   },
   "devDependencies": {
     "cypress": "^14.2.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.0",
+    "prettier": "3.5.3",
     "typescript": "^5.8.3"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   }
 }
