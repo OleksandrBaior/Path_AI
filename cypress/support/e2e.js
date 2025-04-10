@@ -15,3 +15,11 @@
 
 // Import commands.js using ES2015 syntax:
 import "./commands";
+
+beforeEach(() => {
+  cy.visit("/", {
+    onBeforeLoad(win) {
+      win.localStorage.setItem("theme", "light");
+    },
+  });
+});

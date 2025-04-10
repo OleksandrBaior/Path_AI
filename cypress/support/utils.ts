@@ -7,11 +7,19 @@ export function createRandomUser() {
   };
 }
 
-export function randomValue(value: "firstName" | "lastName") {
+export function randomValue(
+  value: "firstName" | "lastName" | "email" | "name" | `phone`,
+) {
   switch (value) {
     case "firstName":
       return faker.person.firstName();
     case "lastName":
       return faker.person.lastName();
+    case "email":
+      return faker.internet.email({ provider: "fakerjs.dev" });
+    case "name":
+      return faker.internet.displayName();
+    case "phone":
+      return faker.number.int({ min: 1000, max: 9999 });
   }
 }
