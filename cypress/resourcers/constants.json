@@ -13,29 +13,12 @@
     "activeBorder": "rgb(37, 99, 235)",
     "errorRedBorder": "rgb(113, 113, 122)"
   },
-  "invalidEmails": [
-    "123",
-    "asd@",
-    "asd@@",
-    "asd@@asd.com",
-    "@asd.com",
-    "asd@gmail.com",
-    "asd@hotmail.com"
-  ],
+  "invalidEmails": ["123", "asd@", "asd@@", "asd@@asd.com", "@asd.com", "asd@gmail.com", "asd@hotmail.com"],
   "country": ["United Kingdom"],
   "phone": {
     "validPhoneNumber": "20 1555 1212"
   },
-  "invalidPasswords": [
-    "qwertyqwerty",
-    "qwertyqwerty123",
-    "qwertyqwerty+",
-    "qwertyqwerty123+",
-    "12345678",
-    "++++++++123",
-    "++++++++++++",
-    "++++++++++Qw"
-  ],
+  "invalidPasswords": ["qwertyqwerty", "qwertyqwerty123", "qwertyqwerty+", "qwertyqwerty123+", "12345678", "++++++++123", "++++++++++++", "++++++++++Qw"],
   "validPassword": ["Qwerty12345+", "Qwerty123456+"],
   "errorMessages": {
     "passwordError": "The password field must match confirm password."

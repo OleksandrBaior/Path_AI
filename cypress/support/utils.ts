@@ -1,4 +1,4 @@
-import { faker } from "@faker-js/faker";
+import { faker } from '@faker-js/faker';
 
 export function createRandomUser() {
   return {
@@ -7,19 +7,17 @@ export function createRandomUser() {
   };
 }
 
-export function randomValue(
-  value: "firstName" | "lastName" | "email" | "name" | `phone`,
-) {
+export function randomValue(value: 'firstName' | 'lastName' | 'email' | 'name' | `phone`) {
   switch (value) {
-    case "firstName":
+    case 'firstName':
       return faker.person.firstName();
-    case "lastName":
+    case 'lastName':
       return faker.person.lastName();
-    case "email":
-      return faker.internet.email({ provider: "fakerjs.dev" });
-    case "name":
+    case 'email':
+      return faker.internet.email({ provider: 'fakerjs.dev' });
+    case 'name':
       return faker.internet.displayName();
-    case "phone":
+    case 'phone':
       return faker.number.int({ min: 1000, max: 9999 });
   }
 }
