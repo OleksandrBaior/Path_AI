@@ -1,7 +1,8 @@
+import { extend } from 'cypress/types/lodash';
 import constants from '../resourcers/constants.json';
 import endpoits from '../resourcers/endpoints.json';
 
-class Sign_up {
+class Sign_up extends Base {
   form = {
     sign_up_to_an_account_btn: () => cy.get('.fi-link > .font-semibold'),
     sign_up_for_an_account_btn: () => cy.get('.fi-simple-header-subheading > .fi-link > .font-semibold'),
@@ -33,10 +34,6 @@ class Sign_up {
     password_eye: () => cy.get('div.fi-input-wrp-suffix button.fi-icon-btn.relative.flex.items-center').eq(0),
     password_confirm_eye: () => cy.get('div.fi-input-wrp-suffix button.fi-icon-btn.relative.flex.items-center').eq(2),
   };
-
-  verifyUrl(value: 'login' | 'register'): void {
-    cy.url().should('include', value);
-  }
 
   verifyInvalidValues(element: () => Cypress.Chainable<JQuery<HTMLElement>>, border: () => Cypress.Chainable<JQuery<HTMLElement>>, lists: Array<string>): void {
     lists.forEach((el) => {

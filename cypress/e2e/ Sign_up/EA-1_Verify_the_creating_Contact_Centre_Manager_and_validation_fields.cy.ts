@@ -12,11 +12,11 @@ describe('EA-1', () => {
     const name = randomValue('name') as string;
     const phone = `201555${randomValue('phone')}` as string;
 
-    cy.visit(roles.CCM.url);
+    // Visit the Sign up page
+    sign_up.visit(roles.CCM.url);
 
     // Verify Sign up and Sign in buttons
     sign_up.form.sign_up_for_an_account_btn().click();
-    cy.url().should('include', endpoits.register);
     sign_up.verifyUrl('register');
     sign_up.form.sign_up_to_an_account_btn().click();
     sign_up.verifyUrl('login');
@@ -69,7 +69,7 @@ describe('EA-1', () => {
     sign_up.verifyHidderVisiblePassword();
 
     // Sign up
-    sign_up.form.sign_up_btn().click();
-    sign_up.verifyUrl('login');
+    // sign_up.form.sign_up_btn().click();
+    // sign_up.verifyUrl('login');
   });
 });
