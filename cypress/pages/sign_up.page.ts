@@ -73,8 +73,8 @@ class Sign_up extends Base {
     this.verifyPasswordEyeVisibility(false);
   }
 
-  verfiyEnteredPhoneNumber(phone: string): void {
-    this.phone_inp()
+  verfiyEnteredPhoneNumber(element: () => Cypress.Chainable<JQuery<HTMLElement>>, phone: string): void {
+    element()
       .invoke('val')
       .then((value: string) => {
         expect(value.replace(/\s/g, '')).to.equal(`0${phone}`);
@@ -102,6 +102,15 @@ class Sign_up extends Base {
 
   verifyErrorBorderColor(element: () => Cypress.Chainable<JQuery<HTMLElement>>): void {
     element().should('have.css', 'box-shadow').and('include', 'rgb(217, 119, 6)');
+  }
+
+  verify_invalid_phone_number(element: () => Cypress.Chainable<JQuery<HTMLElement>>, lists: Array<string>): void {
+    lists.forEach((value) => {
+      element().type(value);
+      element().should('not.have.value', value);
+      this.sign_up_btn().click();
+      element().clear();
+    });
   }
 }
 export default new Sign_up();

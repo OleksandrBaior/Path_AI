@@ -19,7 +19,8 @@
   "country": ["United Kingdom"],
 
   "phone": {
-    "validPhoneNumber": "20 1555 1212"
+    "validPhoneNumber": "20 1555 1212",
+    "invalidPhoneNumber": ["abcdefjlk", "12345678901234567890"]
   },
   "invalidPasswords": ["qwertyqwerty", "qwertyqwerty123", "qwertyqwerty+", "qwertyqwerty123+", "12345678", "++++++++123", "++++++++++++", "++++++++++Qw"],
 

@@ -2,7 +2,6 @@ import { roles } from '../../support/roles';
 import sign_up from '../../pages/sign_up.page';
 import { randomValue } from '../../support/utils';
 import constants from '../../resourcers/constants.json';
-import endpoits from '../../resourcers/endpoints.json';
 
 describe('EA-1', () => {
   it('Verify the creating Contact Centre Manager and validation fields', () => {
@@ -17,9 +16,9 @@ describe('EA-1', () => {
 
     // Verify Sign up and Sign in buttons
     sign_up.sign_up_for_an_account_btn().click();
-    sign_up.verifyUrl('register');
+    sign_up.verify_url('register');
     sign_up.sign_up_to_an_account_btn().click();
-    sign_up.verifyUrl('login');
+    sign_up.verify_url('login');
     sign_up.sign_up_for_an_account_btn().click();
 
     // First name
@@ -44,7 +43,7 @@ describe('EA-1', () => {
     sign_up.search_input().type(constants.country[0]);
     sign_up.first_contry_code().click();
     sign_up.phone_inp().type(phone);
-    sign_up.verfiyEnteredPhoneNumber(phone);
+    sign_up.verfiyEnteredPhoneNumber(sign_up.phone_inp, phone);
     sign_up.verifyErrorRedBorderColor(sign_up.phone_inp, constants.styleElement.activeBorder);
 
     // Contact center name
@@ -70,7 +69,7 @@ describe('EA-1', () => {
 
     // Sign up
     // sign_up.sign_up_btn().click();
-    // sign_up.verifyUrl('login');
+    // sign_up.verify_url('login');
 
     // Verify the email
     // 1. Confirm the email via the link in the greeting email
