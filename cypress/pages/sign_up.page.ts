@@ -37,7 +37,7 @@ class Sign_up extends Base {
   verifyInvalidValues(element: () => Cypress.Chainable<JQuery<HTMLElement>>, border: () => Cypress.Chainable<JQuery<HTMLElement>>, lists: Array<string>): void {
     lists.forEach((el) => {
       element().type(el);
-      this.verifyErrorBorderColor(border);
+      this.verifyErrorBorderColor(border, constants.styleElement.errorBorder);
       this.sign_up_btn().click();
       element().clear();
     });
@@ -97,11 +97,7 @@ class Sign_up extends Base {
   }
 
   verifyBorderColor(element: () => Cypress.Chainable<JQuery<HTMLElement>>): void {
-    this.verifyErrorBorderColor(element);
-  }
-
-  verifyErrorBorderColor(element: () => Cypress.Chainable<JQuery<HTMLElement>>): void {
-    element().should('have.css', 'box-shadow').and('include', 'rgb(217, 119, 6)');
+    this.verifyErrorBorderColor(element, constants.styleElement.errorBorder);
   }
 
   verify_invalid_phone_number(element: () => Cypress.Chainable<JQuery<HTMLElement>>, lists: Array<string>): void {
@@ -111,6 +107,13 @@ class Sign_up extends Base {
       this.sign_up_btn().click();
       element().clear();
     });
+  }
+
+  input_phone_numner(phone: string): void {
+    this.country_select().click();
+    this.search_input().type(constants.country[0]);
+    this.first_contry_code().click();
+    this.phone_inp().type(phone);
   }
 }
 export default new Sign_up();

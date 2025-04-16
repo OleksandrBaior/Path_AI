@@ -1,18 +1,8 @@
 {
-  "CCM": {
-    "firstName": "",
-    "lastName": "",
-    "EmailAddress": "",
-    "ContactPhoneNumber": "",
-    "ContactCentreName": "",
-    "Password": "",
-    "ConfirmPassword": ""
-  },
-
   "styleElement": {
     "errorBorder": "rgb(217, 119, 6)",
     "activeBorder": "rgb(37, 99, 235)",
-    "errorRedBorder": "rgb(113, 113, 122)"
+    "errorRedBorder": "rgb(220, 38, 38)"
   },
   "invalidEmails": ["123", "asd@", "asd@@", "asd@@asd.com", "@asd.com", "asd@gmail.com", "asd@hotmail.com"],
 
@@ -28,5 +18,7 @@
 
   "errorMessages": {
     "passwordError": "The password field must match confirm password."
-  }
+  },
+
+  "exiting_ccm_email": "bayor+1@magora.co.uk"
 }
