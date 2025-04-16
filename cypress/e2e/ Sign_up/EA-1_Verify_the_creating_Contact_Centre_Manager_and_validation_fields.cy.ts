@@ -2,6 +2,7 @@ import { roles } from '../../support/roles';
 import sign_up from '../../pages/sign_up.page';
 import { randomValue } from '../../support/utils';
 import constants from '../../resourcers/constants.json';
+import endpoints from '../../resourcers/endpoints.json';
 
 describe('EA-1', () => {
   it('Verify the creating Contact Centre Manager and validation fields', () => {
@@ -12,7 +13,7 @@ describe('EA-1', () => {
     const phone = `201555${randomValue('phone')}` as string;
 
     // Visit the Sign up page
-    sign_up.visit(roles.CCM.url);
+    sign_up.visit(roles.CCM.url + endpoints.login);
 
     // Verify Sign up and Sign in buttons
     sign_up.sign_up_for_an_account_btn().click();

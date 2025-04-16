@@ -7,12 +7,12 @@ class Base {
     cy.url().should('include', value);
   }
 
-  verifyErrorBorderColor(element: () => Cypress.Chainable<JQuery<HTMLElement>>): void {
-    element().should('have.css', 'box-shadow').and('include', 'rgb(217, 119, 6)');
+  verifyErrorBorderColor(element: () => Cypress.Chainable<JQuery<HTMLElement>>, color: string): void {
+    element().should('have.css', 'box-shadow').and('include', color);
   }
 
-  verifyErrorRedBorderColor(element: () => Cypress.Chainable<JQuery<HTMLElement>>, value: string): void {
-    element().should('have.css', 'border-color', value);
+  verifyErrorRedBorderColor(element: () => Cypress.Chainable<JQuery<HTMLElement>>, color: string): void {
+    element().should('have.css', 'border-color', color);
   }
 }
 export default Base;

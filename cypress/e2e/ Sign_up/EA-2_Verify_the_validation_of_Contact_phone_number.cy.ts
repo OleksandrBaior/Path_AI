@@ -2,6 +2,7 @@ import { roles } from '../../support/roles';
 import sign_up from '../../pages/sign_up.page';
 import { randomValue } from '../../support/utils';
 import constants from '../../resourcers/constants.json';
+import endpoints from '../../resourcers/endpoints.json';
 
 describe('EA-2', () => {
   it('Verify the validation of Contact phone number', () => {
@@ -12,8 +13,7 @@ describe('EA-2', () => {
     const phone = `201555${randomValue('phone')}` as string;
 
     // Fill out the form
-    sign_up.visit(roles.CCM.url);
-    sign_up.sign_up_for_an_account_btn().click();
+    sign_up.visit(roles.CCM.url + endpoints.register);
     sign_up.first_name_inp().type(firstName);
     sign_up.last_name_inp().type(lastName);
     sign_up.email_inp().type(email);
