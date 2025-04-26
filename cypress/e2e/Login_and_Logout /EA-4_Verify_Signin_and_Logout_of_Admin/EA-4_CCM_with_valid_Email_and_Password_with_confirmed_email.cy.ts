@@ -1,6 +1,5 @@
 import { roles } from '../../../support/roles';
 import sign_in from '../../../pages/  registration.page';
-import constants from '../../../resourcers/constants.json';
 import endpoints from '../../../resourcers/endpoints.json';
 
 describe('EA-4_Verify Signin and Logout of Admin/CCM with valid Email and Password with confirmed email', () => {
