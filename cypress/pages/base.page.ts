@@ -3,7 +3,7 @@ class Base {
     cy.visit(path);
   }
 
-  verify_url(value: 'login' | 'register'): void {
+  verify_url(value: string): void {
     cy.url().should('include', value);
   }
 

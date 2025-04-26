@@ -1,4 +1,6 @@
 {
   "login": "/login",
-  "register": "/register"
+  "register": "/register",
+  "view_contact_centre": "/contact-centres/3/view",
+  "admins": "/admin/admins"
 }

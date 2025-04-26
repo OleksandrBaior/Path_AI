@@ -7,6 +7,7 @@
   "description": "",
   "scripts": {
     "cy:open": "cypress open",
+    "cy:run": "npx cypress run",
     "format:allFilesPrettier": "npx prettier . --write",
     "prepare": "husky"
   },

@@ -1,5 +1,5 @@
 import { roles } from '../../support/roles';
-import sign_up from '../../pages/sign_up.page';
+import sign_up from '../../pages/  registration.page';
 import { randomValue } from '../../support/utils';
 import constants from '../../resourcers/constants.json';
 import endpoints from '../../resourcers/endpoints.json';

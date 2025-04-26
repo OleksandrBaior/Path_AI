@@ -1,6 +1,4 @@
-import { extend } from 'cypress/types/lodash';
 import constants from '../resourcers/constants.json';
-import endpoits from '../resourcers/endpoints.json';
 import Base from './base.page';
 
 class Sign_up extends Base {
@@ -33,6 +31,11 @@ class Sign_up extends Base {
   password_error = () => cy.get('.fi-fo-field-wrp-error-message');
   password_eye = () => cy.get('div.fi-input-wrp-suffix button.fi-icon-btn.relative.flex.items-center').eq(0);
   password_confirm_eye = () => cy.get('div.fi-input-wrp-suffix button.fi-icon-btn.relative.flex.items-center').eq(2);
+  // remember me
+  remember_me = () => cy.get('#data\\.remember');
+  // logout
+  avatar = () => cy.get('.fi-avatar');
+  logout_btn = () => cy.get('form > .fi-dropdown-list-item');
 
   verifyInvalidValues(element: () => Cypress.Chainable<JQuery<HTMLElement>>, border: () => Cypress.Chainable<JQuery<HTMLElement>>, lists: Array<string>): void {
     lists.forEach((el) => {
@@ -83,7 +86,7 @@ class Sign_up extends Base {
 
   verifyNextEmptyField(element: () => Cypress.Chainable<JQuery<HTMLElement>>): void {
     this.sign_up_btn().click();
-    this.verifyBorderColor(element);
+    this.verifyErrorBorderColor(element, constants.styleElement.errorBorder);
   }
 
   verifyEnteredValue(element: Cypress.Chainable<JQuery<HTMLElement>>, value: string): void {
@@ -94,10 +97,6 @@ class Sign_up extends Base {
   inputPassword(element: Cypress.Chainable<JQuery<HTMLElement>>, value: string): void {
     element.type(value);
     element.should('have.value', value);
-  }
-
-  verifyBorderColor(element: () => Cypress.Chainable<JQuery<HTMLElement>>): void {
-    this.verifyErrorBorderColor(element, constants.styleElement.errorBorder);
   }
 
   verify_invalid_phone_number(element: () => Cypress.Chainable<JQuery<HTMLElement>>, lists: Array<string>): void {

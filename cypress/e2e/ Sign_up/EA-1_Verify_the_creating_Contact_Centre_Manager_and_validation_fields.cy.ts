@@ -1,5 +1,5 @@
 import { roles } from '../../support/roles';
-import sign_up from '../../pages/sign_up.page';
+import sign_up from '../../pages/  registration.page';
 import { randomValue } from '../../support/utils';
 import constants from '../../resourcers/constants.json';
 import endpoints from '../../resourcers/endpoints.json';
@@ -17,7 +17,7 @@ describe('EA-1', () => {
 
     // Verify Sign up and Sign in buttons
     sign_up.sign_up_for_an_account_btn().click();
-    sign_up.verify_url('register');
+    sign_up.verify_url(endpoints.register);
     sign_up.sign_up_to_an_account_btn().click();
     sign_up.verify_url('login');
     sign_up.sign_up_for_an_account_btn().click();
@@ -73,6 +73,7 @@ describe('EA-1', () => {
     // sign_up.verify_url('login');
 
     // Verify the email
+
     // 1. Confirm the email via the link in the greeting email
     // 2. User is redirected into the contact centre panel
     // 3. Once registration is confirmed all of the Admins receive the notification email about a new contact centrer
